@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 600px;
+            height: 400px;
+            background-color: rgba(128, 227, 235, 0.7);
+            margin: 100px auto;
+            border-radius:10%  10% 0% 0%;
+            position: relative;
+            border: 2px solid rgb(227,227,228);
+        }
+        nav{
+            width: 600px;
+            height: 50px;
+            background-color: rgba(246, 246, 248, 0.9);
+            position: absolute;
+            bottom: 0px;
+            border-top: 2px solid rgb(227,227,228);
+
+        }
+        .prev-box ,.next-box{
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: rgb(232, 60, 60);
+            margin-top: 8px ;
+            float: left;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        .prev,.next{
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            position: absolute;
+            top: 18px;
+        }
+        .prev{
+            border-right: 14px solid #fff;
+            left: 32px;
+        }
+        .next{
+            border-left: 14px solid #fff;
+            left: 145px;
+        }
+        .leftprev,.rightnext{
+            width: 3px;
+            height: 16px;
+            background-color: #fff;
+            margin-top: 10px;
+
+        }
+        .leftprev{
+            margin-left: 8px;
+        }
+        .rightnext{
+            margin-left: 25px;
+        }
+        .ctrl-btn{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgb(232, 60, 60);
+            margin-top: 5px ;
+            float: left;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        .start,.end{
+            float: left;
+            margin-top: 15px;
+            margin-left: 10px;
+            color: #696969;
+        }
+        .line{
+            float: left;
+            width: 200px;
+            height: 8px;
+            background-color: #ccc;
+            margin-top: 20px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .play{
+            width: 8px;
+            height: 20px;
+            border-right: 2px solid #fff;
+            border-left: 2px solid #fff;
+            position: absolute;
+            top: 15px;
+            left: 89px;
+            display: none;
+        }
+        .pause{
+            width: 0;
+            height: 0;
+            border-top: 11px solid transparent;
+            border-left: 18px solid #fff;
+            border-bottom: 11px solid transparent;
+            position: absolute;
+            top: 15px;
+            left: 88px;
+
+        }
+
+        .circle,.volume-circle{
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgb(232, 60, 60);
+            margin-top: -2px;
+        }
+        .card{
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background-color: rgb(39,40,43);
+            position: absolute;
+            top:40px;
+            left:31px;
+            border: 6px solid #ccc;
+        }
+
+        .pic{
+            position: absolute;
+            top: 46px;
+            left: 43px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: rgba(0,0,0,.5);
+            border: 6px solid #ffffff;
+            background: url("http://upload.ct.youth.cn/2015/0214/1423884023662.jpg") no-repeat;
+            background-size: cover;
+        }
+        .song{
+            font-size: 25px;
+            position: absolute;
+            top:40px;
+            right: 85px;
+            font-family: "SimSun", "宋体";
+        }
+        .singer,.special{
+            position: absolute;
+        }
+        .special{
+            right: 90px;
+            top: 78px;
+        }
+        .singer{
+            right: 41px;
+            top: 109px;
+        }
+        .lyrics{
+            width: 187px;
+            height: 217px;
+            position: absolute;
+            top: 111px;
+            right: 47px;
+            text-align: center;
+            word-wrap: break-word;
+            padding: 5px;
+        }
+        .volume{
+            width: 17px;
+            height: 15px;
+            border-top: 10px solid transparent;
+            border-right: 19px solid rgb(232, 60, 60);
+            border-bottom: 10px solid transparent;
+            position: absolute;
+            bottom: 7px;
+            right: 90px;
+        }
+        .volume-line{
+            width: 80px;
+            height: 7px;
+            background-color: #ccc;
+            position: absolute;
+            bottom: 20px;
+            right: 5px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<audio src=""></audio>
+<div class="box">
+    <nav>
+        <div class="prev-box"><div class="prev"></div>
+            <div class="leftprev"></div></div>
+        <div class="ctrl-btn">
+            <div class="play"></div>
+            <div class="pause"></div>
+        </div>
+        <div class="next-box"><div class="next"></div>
+            <div class="rightnext"></div></div>
+        <span class="start">00:00</span>
+        <div class="line">
+            <div class="circle"></div>
+        </div>
+        <span class="end">03:14</span>
+        <div class="mask">
+            <div class="volume"></div>
+            <div class="volume-line"> <div class="volume-circle"></div> </div></div>
+
+    </nav>
+    <div class="card">
+        <img class="pic">
+    </div>
+    <div class="song"><i>易燃易爆炸</i></div>
+    <div class="special">专辑：如也</div>
+    <div class="singer"> 歌手：陈粒</div>
+    <div class="lyrics"></div>
+</div>
+</body>
+<script>
+    var music =[{
+        src:"http://dl.stream.qqmusic.qq.com/C40000394LZb2KXqak.m4a?vkey=29D85E783BC44C5F50195611E88149B2C7FE4A34287D5E03F71623903013FF29473284FF66DA5B58D9F1898D6EA434D187E1D58DA8340DE8&guid=534772299&uin=0&fromtag=66",
+        pic:"http://p4.music.126.net/VuJFMbXzpAProbJPoXLv7g==/7721870161993398.jpg",
+        song:"易燃易爆炸",
+        singer:"歌手：陈粒",
+        special:"专辑：如也",
+        lyrics:""
+    },{
+        src:"http://dl.stream.qqmusic.qq.com/C400004Z2B2y0wzMsC.m4a?vkey=44BCA5EAA3CC0FD8E59D569439BE35CC59AF5314F5062C600DC9467B88216030B9C20E5D9726D3C8687A36FECC0D27C4B9CDE61CF8EFDC7B&guid=534772299&uin=0&fromtag=66",
+        pic:"http://p3.music.126.net/bjGbsyiRaqp8OTiOyOWesA==/7887896418866526.jpg",
+        song:"Mad Hatter",
+        singer:"歌手：Melanie Martinez",
+        special:"专辑：Cry Baby",
+        lyrics:""
+    },{
+        src:"http://dl.stream.qqmusic.qq.com/C400000xKbLI2QEKE9.m4a?vkey=DF47873FEA62F684F4265E7EC756925AB4B91704C98E286850CC339847D1A9BB1BB6DA33C74D2B2E1BBF849BEDF1B8E99880090C92A8C5D7&guid=534772299&uin=0&fromtag=66",
+        pic:"http://p4.music.126.net/GZJY3Iz7TacxI3pr4jvQYQ==/18007801439911769.jpg",
+        song:"故梦",
+        singer:"歌手：双笙",
+        special:"专辑：故梦（翻唱）",
+        lyrics:""
+    },{
+        src:" http://dl.stream.qqmusic.qq.com/C400000FJLrs3NYBM4.m4a?vkey=361C1629DB5CFB2EB40028F62C945FF3CE2097C154EC5DFF0DB5302F53618C5570C8B70FB7B4C48AE14FDBF74C25908E4C10586EB9A5722B&guid=534772299&uin=0&fromtag=66",
+        pic:"http://p3.music.126.net/bjGbsyiRaqp8OTiOyOWesA==/7887896418866526.jpg",
+        song:"Cry Baby",
+        singer:"歌手：Melanie Martinez",
+        special:"专辑：Cry Baby",
+        lyrics:""
+    },{
+        src:"http://dl.stream.qqmusic.qq.com/C400002UPkse4Jf6IT.m4a?vkey=7B2A3057F3B84E35A0DC81A244466B9784FFD916E14C2067A921BF8720D3DC883A775594424826ED2550E43F3B15E614926625DA8D3BAF88&guid=534772299&uin=0&fromtag=66",
+        pic:"http://p4.music.126.net/gn4pPKc_Wk3EyByfi86lUQ==/3333719255417035.jpg",
+        song:"悟空",
+        singer:"歌手：戴荃",
+        special:"专辑：悟空(Live版)",
+        lyrics:""
+    }];
+
+    var audio =document.querySelector("audio");
+    var pic =document.querySelector(".pic");
+    var song=document.querySelector(".song");
+    var singer =document.querySelector(".singer");
+    var special =document.querySelector(".special");
+    var lyrics =document.querySelector(".lyrics");
+    var ctrl_btn =document.querySelector(".ctrl-btn");
+    var play =document.querySelector(".play");
+    var pause =document.querySelector(".pause");
+    var prev_box =document.querySelector(".prev-box");
+    var next_box =document.querySelector(".next-box");
+    var start =document.querySelector(".start");
+    var end =document.querySelector(".end");
+    var  line =document.querySelector(".line");
+    var  circle =document.querySelector(".circle");
+    var  volume_line=document.querySelector(".volume-line");
+    var  volume_circle =document.querySelector(".volume-circle");
+    //    var  mask =document.querySelector(".mask");
+    var timer = null;
+    var an = 0;
+    var index = 0;
+    function add(index){
+        audio .src = music[index].src;
+        pic.src =music[index].pic;
+        song.innerHTML=music[index].song;
+        singer.innerHTML=music[index].singer;
+        special.innerHTML= music[index].special;
+    }
+    add(index);
+    function save(){
+        timer = setInterval(function () {
+            an++;
+            pic.style.transform = 'rotate('+an+'deg)';
+        },20);
+    }
+    ctrl_btn.addEventListener("click",function(){
+        if(audio.paused){
+            audio.play();
+            pause.style.display="none";
+            play.style.display ="block";
+            save();
+        }else{
+            audio.pause();
+            pause.style.display="block";
+            play.style.display ="none";
+            clearInterval(timer);
+        }
+    });
+    prev_box.addEventListener("click",function(){
+        index--;
+        index = index <0 ? 4:index;
+        pause.style.display="none";
+        play.style.display ="block";
+        add(index);
+        an = 0;
+        audio.play();
+    });
+    next_box.addEventListener("click",function(){
+        index++;
+        index = index >4 ? 0:index;
+        pause.style.display="none";
+        play.style.display ="block";
+        add(index);
+        an = 0;
+        audio.play();
+        clearInterval(timer);
+        save();
+    });
+    //总时长
+    audio.addEventListener("canplay",function(){
+        var Min = Math.floor(audio.duration/60);
+        var Second = Math.floor(audio.duration % 60);
+        var min = Min > 9 ? Min  : "0" + Min ;
+        var second = Second > 9 ? Second :"0"+ Second;
+        end.innerHTML = min+ ':' + second;
+    });
+    //更新时间
+    audio.addEventListener("timeupdate",function(){
+        var nowm = Math.floor(audio.currentTime/60);
+        var nows = Math.floor(audio.currentTime % 60);
+        var newmin = nowm > 9 ? nowm  : "0" + nowm ;
+        var newsecond = nows > 9 ?nows :"0"+ nows;
+        start.innerHTML = newmin + ':' + newsecond ;
+        circle.style.marginLeft = audio.currentTime / audio.duration * 188 + 'px';
+    });
+    line.addEventListener("click",function(e){
+        audio.currentTime = audio.duration * (e.offsetX / 195);
+    });
+    audio.addEventListener("ended",function(){
+        index++;
+        add(index);
+        audio.play();
+    });
+    var volume = 0.5;
+    volume_circle.style.marginLeft = 34 +"px";
+
+    volume_line.addEventListener("click",function(e){
+        audio.volume = (e.offsetX/68)*1.0;
+        volume_circle.style.marginLeft = e.offsetX +"px";
+        console.log(audio.volume );
+//        if(audio.volume=0){
+//           mask.style.display ="none";
+//
+//        }
+    })
+</script>
+</html>

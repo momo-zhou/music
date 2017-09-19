@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="https://cdn.bootcss.com/jquery-mobile/1.4.2/jquery.mobile.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/css.css"/>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <style>
+        ul{
+            list-style: none;
+        }
+        .list-inline{
+            width: 4000px;
+            overflow: hidden;
+            border-bottom: 5px solid black;
+        }
+        .list-inline> li{
+            float: left;
+            line-height: 65px;
+        }
+        .list-inline> li >img{
+            max-width: 100%;
+        }
+        .ui-grid-b img{
+            max-width: 100%;
+            border-radius: 10%;
+        }
+       .padding{
+           padding: 10px;
+       }
+        #footer{
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+   <div data-role="page" data-theme="b">
+       <div data-role="header">
+          <h2>我的音乐播放器</h2>
+       </div>
+       <div data-role="content">
+           <ul class="list-inline">
+               <li><img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3887079117,2263300816&fm=27&gp=0.jpg" alt=""/></li>
+               <li><img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3887079117,2263300816&fm=27&gp=0.jpg" alt=""/></li>
+               <li><img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=896574752,2002572584&fm=27&gp=0.jpg" alt=""/></li>
+               <li><img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=896574752,2002572584&fm=27&gp=0.jpg" alt=""/></li>
+           </ul>
+           <ul data-role="listview" data-inset="true">
+                <div>
+                    <h3 style="float: left">热门推荐</h3>
+                    <ul class="list-inline" style="float: left">
+                        <li><a href="">华语</a></li>
+                        <li><a href="">古风</a></li>
+                        <li><a href="">摇滚</a></li>
+                        <li><a href="">民谣</a></li>
+                        <span style="float: right">更多</span>
+                    </ul>
+                </div>
+               <li>
+                   <div class="ui-grid-b">
+                   <div class="ui-block-a padding">
+                       <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3240303584,1415539477&fm=27&gp=0.jpg
+                       " alt="" />
+                       <p><span>[民谣里]</span> 姑娘，你的酒铺还缺人么？</p>
+                   </div>
+                   <div class="ui-block-b padding">
+                       <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1922223120,765636421&fm=27&gp=0.jpg" alt="" />
+                       <p><span>[民谣里]</span> 姑娘，你的酒铺还缺人么？</p></div>
+                   <div class="ui-block-c padding">
+                       <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505812977374&di=ccd378c84288ce87439def75c414957c&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F30adcbef76094b361e0197f1a9cc7cd98d109d1f.jpg
+                       " alt="" />
+                       <p><span>[民谣里]</span> 姑娘，你的酒铺还缺人么？</p></div>
+               </div></li>
+               <li>
+                   <div class="ui-grid-b">
+                       <div class="ui-block-a padding">
+                           <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3244524356,917435724&fm=27&gp=0.jpg
+                       " alt="" />
+                           <p><span>[民谣里]</span> 姑娘，你的酒铺还缺人么？</p>
+                       </div>
+                       <div class="ui-block-b padding">
+                           <img src="img/4.jpg" alt="" />
+                           <p><span>[MarilynManson]</span> 『♫ 全部歌曲合集 』</p></div>
+                       <div class="ui-block-c padding">
+                           <img src="img/3.jpg" alt="" />
+                           <p><span>『古风』</span> 二字集·听弦断·断那三千痴缠。
+                         </p></div>
+
+                   </div>
+               </li>
+               <li>
+                   <div class="ui-grid-b">
+                       <div class="ui-block-a padding">
+                           <img src="img/2.jpg " alt="" />
+                           <p><span>[民谣里]</span> 姑娘，你的酒铺还缺人么？</p>
+                       </div>
+                       <div class="ui-block-b padding"><img src="img/1.jpg" alt="" />
+                           <p><span>【哥特式元素】</span>死亡美学的精神力量</p></div>
+                       <div class="ui-block-c padding"><img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3147945707,378087169&fm=27&gp=0.jpg
+                       ." alt="" />
+                           <p><span>[民谣里]</span> 姑娘，你的酒铺还缺人么？</p></div>
+
+                   </div>
+               </li>
+
+           </ul>
+       </div>
+       <div data-role="footer" id="footer">
+           <nav>
+               <div class="prev-box"><div class="prev"></div>
+                   <div class="leftprev"></div></div>
+               <div class="ctrl-btn">
+                   <div class="play"></div>
+                   <div class="pause"></div>
+               </div>
+               <div class="next-box"><div class="next"></div>
+                   <div class="rightnext"></div></div>
+               <span class="start">00:00</span>
+               <div class="line">
+                   <div class="circle"></div>
+               </div>
+               <span class="end">03:14</span>
+               <div class="mask">
+
+                   <span class="glyphicon glyphicon-volume-up "></span>
+                   <div class="volume-line"><div class="volume-circle"></div> </div>
+               </div>
+
+           </nav>
+       </div>
+   </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-mobile/1.4.2/jquery.mobile.min.js"></script>
+</html>

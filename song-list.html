@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="https://cdn.bootcss.com/jquery-mobile/1.4.2/jquery.mobile.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <style>
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+   <div data-role="page" data-theme="b" id="page3">
+       <div data-role="header">
+           <a href="singer-list.html">返回</a>
+           <h3>陈粒</h3>
+       </div>
+       <div data-role="content">
+
+           <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=823809641,1767416998&fm=27&gp=0.jpg" alt="" class="center-block" style="max-width: 100%"/>
+           <audio src=""></audio>
+           <ul data-role="listview" data-inset="true">
+               <li><a href="play.html"><span class="glyphicon glyphicon-heart"></span> 小半</a></li>
+               <li><a href=""> <span class="glyphicon glyphicon-heart"></span> 易燃易爆炸</a></li>
+               <li><a href=""> <span class="glyphicon glyphicon-heart"></span> 奇妙能力歌</a></li>
+               <li><a href=""> <span class="glyphicon glyphicon-heart"></span> 走马</a></li>
+               <li><a href=""> <span class="glyphicon glyphicon-heart"></span> 历历万乡</a></li>
+               <li><a href=""> <span class="glyphicon glyphicon-heart"></span> 性空山</a></li>
+               <li><a href=""> <span class="glyphicon glyphicon-heart"></span> 光</a></li>
+           </ul>
+       </div>
+       <div data-role="footer">
+           <div data-role="navbar" data-position="fixed">
+               <ul>
+                   <li class="prev"><a href="">上一首</a></li>
+                   <li class="play"><a href="">播放</a></li>
+                   <li class="pause"><a href="">暂停</a></li>
+                   <li class="next"><a href="">下一首</a></li>
+                   <li><a href="">更多专辑</a></li>
+               </ul>
+           </div>
+       </div>
+
+   </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-mobile/1.4.2/jquery.mobile.min.js"></script>
+<script>
+    var music =[{
+        src:"http://dl.stream.qqmusic.qq.com/C400001hs89m3C5p3g.m4a?vkey=0472AD5960C706C66DF5F7B2F10C1B231DD7AEE408837EBFE25AA2BD0EBE5FE0B64A50D4341F425A2A5873BE2338D06CAED229421027ED75&guid=534772299&uin=0&fromtag=66",
+    },{
+        src:"http://dl.stream.qqmusic.qq.com/C40000394LZb2KXqak.m4a?vkey=4DF776C6099C07CCBB1DB9686DF87E79B7A51F61DB4F8F480A8A95E4FCF83FE5EA7792CB2070C983604CBC19612E21871119C891734656B7&guid=534772299&uin=0&fromtag=66",
+    },{
+        src:"http://dl.stream.qqmusic.qq.com/C400001j7B3Z4Ixe9X.m4a?vkey=A3BE9F4774629DA1499A73F7D920365139C297891178CBCEFB9DF459070CBD094045F22AA491D4EAF96270A0309A27E62C0F294FB9857F7E&guid=534772299&uin=0&fromtag=66",
+    },{
+        src:"http://dl.stream.qqmusic.qq.com/C400000ffReZ1XyCS7.m4a?vkey=BB4C77BD4BE27539254974DC6E3F71A35B0F99FA7AB1C339972E8E899DB6A07CCC75C292CB2A30C439BFC88EA97A75D1B49E7C0CADE7D95B&guid=534772299&uin=0&fromtag=66",
+    },{
+        src:"http://dl.stream.qqmusic.qq.com/C400002r0Gnr2VCBRR.m4a?vkey=B558E91F9F67E2D9DD80245FBE0821C39BBA83A121DD05DCA8EDAB7B69389240269915294EAE260E8C6095B04271374DDA58CF8FE9985449&guid=534772299&uin=0&fromtag=66",
+    },{
+        src:"http://dl.stream.qqmusic.qq.com/C400000FzzWV2U3lnA.m4a?vkey=8EB3A2511F5D19494AB33931A435B361DA2127B27604FFD213189F6DDA6BC5375B8FA8952075CCF70F9992336C4BB2CCEAA63E95CB100354&guid=534772299&uin=0&fromtag=66"
+    }, {
+        src:"http://dl.stream.qqmusic.qq.com/C400000X41LW079jRG.m4a?vkey=0818A1A2646ADB01A8BB70EF4172E05E9F700D00ABA72803712656EDDAE73D90DF0A45C75B15FD807B1CEEA962299D196CEBABBA60CFFE66&guid=534772299&uin=0&fromtag=66"
+        }
+    ];
+
+    var audio =document.querySelector("audio");
+    var play =document.querySelector(".play");
+    var pause =document.querySelector(".pause");
+    var prev=document.querySelector(".prev");
+    var next =document.querySelector(".next");
+    var timer = null;
+    var an = 0;
+    var index = 0;
+    function add(index){
+        audio .src = music[index].src;
+    }
+    add(index);
+
+    $(".play").on("tap",function(){
+        if(audio.paused){
+            audio.play();
+        }else{
+            audio.pause();
+            clearInterval(timer);
+        }
+    });
+    $(".prev").on("tap",function(){
+        index--;
+        index = index <0 ? 6:index;
+        add(index);
+        audio.play();
+    });
+    $(".next").on("tap",function(){
+        index++;
+        index = index >6 ? 0:index;
+        add(index);
+        audio.play();
+        clearInterval(timer);
+    });
+//    //总时长
+//    audio.addEventListener("canplay",function(){
+//        var Min = Math.floor(audio.duration/60);
+//        var Second = Math.floor(audio.duration % 60);
+//        var min = Min > 9 ? Min  : "0" + Min ;
+//        var second = Second > 9 ? Second :"0"+ Second;
+//        end.innerHTML = min+ ':' + second;
+//    });
+//    //更新时间
+//    audio.addEventListener("timeupdate",function(){
+//        var nowm = Math.floor(audio.currentTime/60);
+//        var nows = Math.floor(audio.currentTime % 60);
+//        var newmin = nowm > 9 ? nowm  : "0" + nowm ;
+//        var newsecond = nows > 9 ?nows :"0"+ nows;
+//        start.innerHTML = newmin + ':' + newsecond ;
+//        circle.style.marginLeft = audio.currentTime / audio.duration * 188 + 'px';
+//    });
+//    line.addEventListener("click",function(e){
+//        audio.currentTime = audio.duration * (e.offsetX / 195);
+//    });
+//    audio.addEventListener("ended",function(){
+//        index++;
+//        add(index);
+//        audio.play();
+//    });
+//    var volume = 0.5;
+//    volume_circle.style.marginLeft = 34 +"px";
+//
+//    volume_line.addEventListener("click",function(e){
+//        audio.volume = (e.offsetX/68)*1.0;
+//        volume_circle.style.marginLeft = e.offsetX +"px";
+//        console.log(audio.volume );
+////        if(audio.volume=0){
+////           mask.style.display ="none";
+////
+////        }
+//    })
+</script>
+</html>
