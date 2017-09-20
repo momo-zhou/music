@@ -1,57 +1,21 @@
-nav{
-    width: 100%;
-    position: absolute;
-    bottom: 0px;
-    border-top: 2px solid black;
-}
+
 .prev-box ,.next-box{
-    width: 35px;
-    height: 35px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background-color: rgb(232, 60, 60);
-    margin-top: 8px ;
-    float: left;
-    margin-left: 20px;
-    cursor: pointer;
-}
-.prev,.next{
-    width: 0;
-    height: 0;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-    position: absolute;
-    top: 18px;
-}
-.prev{
-    border-right: 14px solid #fff;
-    left: 32px;
-}
-.next{
-    border-left: 14px solid #fff;
-    left: 145px;
-}
-.leftprev,.rightnext{
-    width: 3px;
-    height: 16px;
-    background-color: #fff;
-    margin-top: 10px;
+    line-height: 50px;
 
 }
-.leftprev{
-    margin-left: 8px;
-}
-.rightnext{
-    margin-left: 25px;
-}
+
 .ctrl-btn{
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background-color: rgb(232, 60, 60);
-    margin-top: 5px ;
-    float: left;
-    margin-left: 20px;
-    cursor: pointer;
+    line-height: 60px;
+    font-size:20px ;
+
 }
 
 .start,.end{
@@ -80,14 +44,7 @@ nav{
     display: none;
 }
 .pause{
-    width: 0;
-    height: 0;
-    border-top: 11px solid transparent;
-    border-left: 18px solid #fff;
-    border-bottom: 11px solid transparent;
-    position: absolute;
-    top: 15px;
-    left: 88px;
+
 
 }
 

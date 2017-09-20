@@ -12,6 +12,13 @@
             text-decoration: none;
             color: white;
         }
+        .ul{
+            position: relative;
+        }
+        .pause{
+           line-height: 35px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -36,12 +43,12 @@
        </div>
        <div data-role="footer">
            <div data-role="navbar" data-position="fixed">
-               <ul>
+               <ul class="ul">
+                   <li><a href="index.html">首页</a></li>
                    <li class="prev"><a href="">上一首</a></li>
                    <li class="play"><a href="">播放</a></li>
                    <li class="pause"><a href="">暂停</a></li>
                    <li class="next"><a href="">下一首</a></li>
-                   <li><a href="">更多专辑</a></li>
                </ul>
            </div>
        </div>
@@ -82,13 +89,14 @@
     add(index);
 
     $(".play").on("tap",function(){
-        if(audio.paused){
+            audio.paused;
             audio.play();
-        }else{
+    });
+    $(".pause").on("tap",function(){
             audio.pause();
             clearInterval(timer);
-        }
     });
+
     $(".prev").on("tap",function(){
         index--;
         index = index <0 ? 6:index;
